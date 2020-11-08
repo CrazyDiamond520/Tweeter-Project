@@ -10,8 +10,8 @@ const Renderer = function(){
             div.append(`<div class="post" data-postId="${id}"> ${posts[i].text} </div>`)
             div.append(`<div class="delete" data-postId="${id}"><i class="fas fa-trash"></i></div>`)
             for(let j in posts[i].comments){
-                let commentid = posts[i].comments[j].id
-                let comment = posts[i].comments[j].text
+                const commentid = posts[i].comments[j].id
+                const comment = posts[i].comments[j].text
                 // console.log(comment)
                 div.append(`<div class="comments" data-commentId="${commentid}"><span class="delete-comment"><i class="far fa-trash-alt"></i></span>${comment} </div>`)
                 div.append()
