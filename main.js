@@ -20,15 +20,20 @@ $("body").on("click",".delete", function(){
 })
 
 $("body").on("click", ".addComment", function(){
-    let position = $(this).closest(".post").data().postid
-    let text = $(this).closest(".post").find(".newComment").val()
+    const position = $(this).closest(".post").data().postid
+    const text = $(this).closest(".post").find(".newComment").val()
     // console.log(text)
     tweeter.addComment(position, text)
     renderer.renderPosts(tweeter.getPosts())
     // console.log(position)
 })
 
-$(body).on("click", ".delete-comment", function(){
-    let position = $(this).closest(".post").data().postid
-    commentid= $(this).closest(".post").find()
+$("body").on("click", ".delete-comment", function(){
+    const position = $(this).closest(".post").data().postid
+    const commentid= $(this).closest(".comments").data().commentid
+    // console.log(commentid)
+    tweeter.removeComment(position, commentid)
+    renderer.renderPosts(tweeter.getPosts())
+
+
 })
